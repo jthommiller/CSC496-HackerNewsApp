@@ -1,21 +1,16 @@
 language: node_js
-
 node_js:
   - "stable"
-
 cache:
   directories:
     - node_modules
-	
 install:
     - npm install
     - npm install --save-dev enzyme
     - npm install --save-dev enzyme-adapter-react-16
-	
 script:
   - npm test
   - npm run build
-  
 deploy:
   provider: pages
   skip_cleanup: true
