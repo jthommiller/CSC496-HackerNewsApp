@@ -1,18 +1,20 @@
 import React from 'react';
-import App from './App';
+import App, {Search, Table} from './App';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {shallow} from 'enzyme';
-import logo from './logo.svg';
+
 
 configure({ adapter: new Adapter() });
 
-it('renders learn react link', () => {
-  const linkElement = shallow(<App/>);
-  expect(linkElement.find('a').text()).toEqual('Learn React')
+it('Table is Rendered', () => {
+  const wrapper = shallow(<App/>);
+  const tag = wrapper.find(Table);
+  expect(tag.exists()).toEqual(true);
 });
 
-it('renders image', () => {
-  const wrapper = shallow(<App/>);
-  expect(wrapper.find('img').prop("src")).toEqual(logo);
-})
+it('Search button has text set to "Search"', () => {
+  const wrapper = shallow(<Search>Search</Search>);
+  expect(wrapper.text()).toEqual('Search');
+});
+
