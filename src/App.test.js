@@ -18,3 +18,16 @@ it('Search button has text set to "Search"', () => {
   expect(wrapper.text()).toEqual('Search');
 });
 
+describe('App', () => {
+  const wrapper = mount(<App/>);
+  test('Creates Search', () => {
+    expect(wrapper.find(Search).length).toEqual(1);
+  });
+
+  test('Search button says "Search"', () => {
+    const search = wrapper.find(Search);
+    expect(Search.text).toEqual('Search');
+  });
+  
+});
+
