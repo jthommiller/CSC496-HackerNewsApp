@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import PropTypes from 'prop-types';
+import Cookies from 'universal-cookie';
 
 const DEFAULT_QUERY = 'redux';
 const DEFAULT_PAGE = 0;
@@ -11,6 +12,8 @@ const PATH_SEARCH = '/search';
 const PARAM_SEARCH = 'query=';
 const PARAM_PAGE = 'page=';
 const PARAM_HPP = 'hitsPerPage=';
+
+const cookies = new Cookies();
 
 const Search = ({ value, onChange, onSubmit, children }) =>
   <form onSubmit={onSubmit}>
@@ -69,12 +72,14 @@ Table.propTypes = {
 };
 
 class App extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
+      cookie: cookies,
       results: null,
       searchKey: '',
-      searchTerm: DEFAULT_QUERY,
+      searchTerm: cookies.get('savedSearch') || DEFAULT_QUERY,
     };
     this.needsToSearchTopstories = this.needsToSearchTopstories.bind(this);
     this.setSearchTopstories = this.setSearchTopstories.bind(this);
@@ -83,6 +88,7 @@ class App extends Component {
     this.onSearchSubmit = this.onSearchSubmit.bind(this);
     this.onDismiss = this.onDismiss.bind(this);
   }
+
   needsToSearchTopstories(searchTerm) {
     return !this.state.results[searchTerm];
   }
@@ -100,7 +106,7 @@ class App extends Component {
         .then(result => this.setSearchTopstories(result));
   }
   componentDidMount() {
-    const { searchTerm } = this.state;
+    const {searchTerm } = this.state;
     this.setState({ searchKey: searchTerm });
     this.fetchSearchTopstories(searchTerm);
     this.fetchSearchTopstories(searchTerm, DEFAULT_PAGE);
@@ -110,8 +116,9 @@ class App extends Component {
     this.setState({ searchTerm: event.target.value });
   }
   onSearchSubmit(event) {
-    const { searchTerm } = this.state;
+    const { searchTerm, cookie } = this.state;
     this.setState({ searchKey: searchTerm });
+    cookie.set('savedSearch', searchTerm, { path: '/'});
     if (this.needsToSearchTopstories(searchTerm)) {
       this.fetchSearchTopstories(searchTerm, DEFAULT_PAGE);
     }
@@ -143,7 +150,6 @@ class App extends Component {
               list={list}
               onDismiss={this.onDismiss}
             />
-          }
           <div className="interactions">
             <Button onClick={() => this.fetchSearchTopstories(searchTerm, page + 1)}>
               More
