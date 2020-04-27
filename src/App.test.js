@@ -18,3 +18,16 @@ it('Search button has text set to "Search"', () => {
   expect(wrapper.text()).toEqual('Search');
 });
 
+describe('App', () => {
+  const wrapper = shallow(<App/>);
+  test('Creates Search', () => {
+    expect(wrapper.find(Search).length).toEqual(1);
+  });
+
+  test('onSubmit does not crash', () => {
+    const search = wrapper.find(Search);
+    wrapper.find('Search').invoke('onSubmit')
+  });
+  
+});
+
