@@ -20,9 +20,9 @@ https://jthommiller.github.io/CSC496-HackerNewsApp/
 
 ## Screenshots
 
-![Screenshot of main page](Screenshots/MainScreen)
+![Screenshot of main page](https://github.com/jthommiller/CSC496-HackerNewsApp/blob/master/Screenshots/MainScreen.png?raw=true)
 
-![Screenshot of first search](Screenshots/Search1)
+![Screenshot of first search](https://github.com/jthommiller/CSC496-HackerNewsApp/blob/master/Screenshots/Search1.png?raw=true)
 
 ## Contributions
 I was lucky to have help on this project:
