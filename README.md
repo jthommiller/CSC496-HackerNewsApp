@@ -18,7 +18,7 @@ The following link will direct you to the deployment of the web application: <br
 
 https://jthommiller.github.io/CSC496-HackerNewsApp/
 
-##Screenshots
+## Screenshots
 
 ![Screenshot of main page](Screenshots/MainScreen)
 
