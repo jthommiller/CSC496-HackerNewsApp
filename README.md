@@ -1,70 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+
+This project, while an assignment for my Senior Seminar class, was to help in learning about React. This project was to learn how to use React combined with other resources to create a comprehensive, adaptive, and powerful web application. This project was also to learn how to incorporate various means of testing via Enzyme and Jest. This project also incorporates continuous integration and automatic deployment via Travis CI for practice and experience with combining Github and other powerful tools. This web application is designed to utilize Searching and Table components to create a table of links that can direct the user to various sites to learn more about React topics. The web application boasts a search function to look for specific topics and integrates cookie management to save recent searches for long periods of use. 
+
+## Technical Features
+This project utilizes React principles and libraries to create a powerful web application. It also utilizes:
+
+> Javascript for web application development - This is what was used to create the components that make up the UI and mechanics that make up the web applicaiton
+
+> Jest and Enzyme for creating unit and integration tests - This is utilized in conjuncture with continuous integration to practice testing the web application using Enzyme and Jest. These tests tested that the search function was operating correctly, that the search bar and button are properly rendered and that the table for the web application is rendered.
+
+>Continuous integration via Travis CI - The GitHub account is connected to the Travis CI website that manages integration of new pushes to the repo. It also automatically published the web application to GitHub Pages for immediate availability.
+
+>State cookie management - The project uses the Universal Cookie manager to store, maintain, and retrieve cookies
+
+## Try Out
+The following link will direct you to the deployment of the web application: <br >
+
+https://jthommiller.github.io/CSC496-HackerNewsApp/
+
+##Screenshots
+
+![Screenshot of main page](Screenshots/MainScreen)
+
+![Screenshot of first search](Screenshots/Search1)
+
+## Contributions
+I was lucky to have help on this project:
+
+Chase Dawson (https://github.com/AztianPahola) made a couple of pull requests that added more tests for more coverage, updated the design of the table and added state cookie management! The details can be found here: https://github.com/jthommiller/CSC496-HackerNewsApp/pull/1
+
+## Getting Started
+Run the following commands to get started with the application!
+
+Clone the application repo to the desired location on your local machine
+### 'git clone https://github.com/jthommiller/CSC496-HackerNewsApp.git'
+
+Inside the project directory run the following commands:
+### 'npm install'
+
+### 'npm install --save-dev enzyme'
+
+### 'npm install --save-dev enzyme-adapter-react-16'
+
+### 'npm install universal-cookie'
+
+### 'npm run build'
 
 
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
